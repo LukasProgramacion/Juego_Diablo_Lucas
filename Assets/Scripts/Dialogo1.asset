@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61fe387f5691d9f4086a8e66b93278bf, type: 3}
+  m_Name: Dialogo1
+  m_EditorClassIdentifier: 
+  frases:
+  - "Hi, there! fieston en mi kelly en noche viejaaaaa, vente brouston.\n9,98\u20AC
+    (no es una estafa)"
+  - how long have you had this house? yes that is true
+  - el sudor y el sufrimiento de unos es el goce y la alegria de otros
+  tiempoEntreLetras: 0
