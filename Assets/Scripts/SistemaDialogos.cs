@@ -10,7 +10,9 @@ public class SistemaDialogos : MonoBehaviour
 
     private bool escribiendo;
     private int indiceFraseActual;
-    
+
+    private DialogoSO dialogoActual;
+
     public static SistemaDialogos sistema;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
     private void Awake()
     {
@@ -31,22 +33,65 @@ public class SistemaDialogos : MonoBehaviour
 
     public void IniciarDialogo(DialogoSO dialogo)
     {
+        Time.timeScale = 0f;
+        
+        dialogoActual = dialogo;
         marcos.SetActive(true);
+
+        StartCoroutine(EscribirFrase());
     }
 
     //Texto aparece letra por letra
-    private void EscribirFrase()
+    private IEnumerator EscribirFrase()
     {
+        escribiendo = true;
         
+        textoDialogo.text = "";
+        
+        char[] frasEnLetras = dialogoActual.frases[indiceFraseActual].ToCharArray();
+        foreach (char letra in frasEnLetras)
+        {
+            textoDialogo.text += letra;
+            yield return new WaitForSecondsRealtime(dialogoActual.tiempoEntreLetras);
+        }
+
+        escribiendo = false;
     }
 
-    private void SiguienteFrase()
+    public void SiguienteFrase()
     {
-        
+        if(escribiendo)
+        {
+            CompletarFrase();
+        }
+        else
+        {
+            indiceFraseActual++;
+            if(indiceFraseActual < dialogoActual.frases.Length)
+            {
+                StartCoroutine(EscribirFrase());
+            }
+            else
+            {
+                TerminarDialogo();
+            }
+        }
+    }
+
+    private void CompletarFrase()
+    {
+        StopAllCoroutines();
+        textoDialogo.text = dialogoActual.frases[indiceFraseActual];
+        escribiendo = false;
     }
 
     private void TerminarDialogo()
     {
-
+        marcos.SetActive(false);
+        StopAllCoroutines();
+        indiceFraseActual = 0;
+        escribiendo = false;
+        dialogoActual = null;
+        Time.timeScale = 1;
     }
 }
