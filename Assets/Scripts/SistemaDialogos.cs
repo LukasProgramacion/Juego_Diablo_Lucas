@@ -13,6 +13,8 @@ public class SistemaDialogos : MonoBehaviour
 
     private DialogoSO dialogoActual;
 
+    [SerializeField] private Transform npcCamera;
+
     public static SistemaDialogos sistema;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
     private void Awake()
     {
@@ -31,10 +33,12 @@ public class SistemaDialogos : MonoBehaviour
         }
     }
 
-    public void IniciarDialogo(DialogoSO dialogo)
+    public void IniciarDialogo(DialogoSO dialogo, Transform cameraPoint)
     {
         Time.timeScale = 0f;
-        
+
+        npcCamera.SetPositionAndRotation(cameraPoint.position, cameraPoint.rotation);
+
         dialogoActual = dialogo;
         marcos.SetActive(true);
 

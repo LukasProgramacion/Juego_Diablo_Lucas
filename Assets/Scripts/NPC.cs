@@ -11,6 +11,8 @@ public class NPC : MonoBehaviour
     [SerializeField] private DialogoSO dialogo;
 
     [SerializeField] private float tiempoRotacion;
+
+    [SerializeField] private Transform cameraPoint;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -19,7 +21,7 @@ public class NPC : MonoBehaviour
 
     public void Interactuar (Transform interactuador)
     {
-        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDialogos.sistema.IniciarDialogo(dialogo));
+        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDialogos.sistema.IniciarDialogo(dialogo, cameraPoint));
         //SistemaDialogos.sistema.IniciarDialogo();
     }
     
