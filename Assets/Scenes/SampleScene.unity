@@ -3901,6 +3901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15af5fbafc4620e4798795bdbcfef21c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 1738310716}
   ruta: {fileID: 1941999269}
   agent: {fileID: 1738310715}
 --- !u!135 &400722542
@@ -3922,7 +3923,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &429524276
 PrefabInstance:
@@ -8147,6 +8148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd9229d4a08a7440b30eb29fcdcf74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 1738310716}
+  velocidadCombate: 1.5
+  distanciaAtaque: 0.3
+  agent: {fileID: 1738310715}
 --- !u!1 &891335375
 GameObject:
   m_ObjectHideFlags: 0

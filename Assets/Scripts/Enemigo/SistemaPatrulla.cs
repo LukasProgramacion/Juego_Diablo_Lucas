@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class SistemaPatrulla : MonoBehaviour
 {
+    [SerializeField] private Enemigo main;
+    
     [SerializeField] private Transform ruta;
 
     [SerializeField] private NavMeshAgent agent;
@@ -16,6 +18,8 @@ public class SistemaPatrulla : MonoBehaviour
         
     private void Awake()
     {
+        //Comunico al main q el sistema de patrulla soy yo.
+        main.Patrulla = this; 
         
         //va recorriendo todos los puntos q tiene mi ruta
         foreach (Transform punto in ruta)
@@ -56,6 +60,11 @@ public class SistemaPatrulla : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.CompareTag("Player"))
+        {
+            StopAllCoroutines();
+            main.ActivaCombate(other.transform);
+            this.enabled = false; // Deshabilito patrulla
+        }
     }
 }
