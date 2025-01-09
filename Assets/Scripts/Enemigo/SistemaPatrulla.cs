@@ -15,6 +15,7 @@ public class SistemaPatrulla : MonoBehaviour
     private float tiempoEntrePuntos;
 
     List<Vector3> listadoPuntos = new List<Vector3>();
+    [SerializeField] private float velocidadPatrulla;
         
     private void Awake()
     {
@@ -31,8 +32,15 @@ public class SistemaPatrulla : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    private void OnEnable()
+    {
+        indiceRutaActual = -1;
+        agent.speed = velocidadPatrulla;
         StartCoroutine(PatrullarYEsperar());
     }
+
     private IEnumerator PatrullarYEsperar()
     {
         while (true)

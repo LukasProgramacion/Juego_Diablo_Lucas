@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,10 @@ public class SistemaCombate : MonoBehaviour
 
     [SerializeField] float velocidadCombate;
     [SerializeField] float distanciaAtaque;
+
     [SerializeField] private NavMeshAgent agent;
+
+    [SerializeField] private Animator anim;
 
     private void Awake()
     {
@@ -32,6 +36,28 @@ public class SistemaCombate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(main.MainTarget.position);
+        if (main.MainTarget != null && agent.CalculatePath(main.MainTarget.position, new NavMeshPath()))
+        {
+            EnfocarObjetivo();
+            agent.SetDestination(main.MainTarget.position);
+
+            if (agent.remainingDistance <= distanciaAtaque)
+            {
+                anim.SetBool("attacking", true);
+            }
+
+        }
+        else
+        {
+            main.ActivarPatrulla();
+        }
+    }
+
+    private void EnfocarObjetivo()
+    {
+        Vector3 direccionATarget = (main.MainTarget.position - this.transform.position).normalized;
+        direccionATarget.y = 0;
+        Quaternion rotacionATarget =  Quaternion.LookRotation(direccionATarget);
+        transform.rotation = rotacionATarget;   
     }
 }
