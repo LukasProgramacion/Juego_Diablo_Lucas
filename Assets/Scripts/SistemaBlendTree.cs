@@ -25,4 +25,6 @@ public class SistemaBlendTree : MonoBehaviour
     {
         anim.SetFloat("velocity", agent.velocity.magnitude / agent.speed);
     }
+
+   
 }

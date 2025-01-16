@@ -38,6 +38,7 @@ public class SistemaPatrulla : MonoBehaviour
     {
         indiceRutaActual = -1;
         agent.speed = velocidadPatrulla;
+        agent.stoppingDistance = 0;
         StartCoroutine(PatrullarYEsperar());
     }
 

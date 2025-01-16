@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
@@ -36,12 +37,12 @@ public class Player : MonoBehaviour
 
         }
 
-        if(ultimoClick && ultimoClick.TryGetComponent(out NPC npc)) 
+        if(ultimoClick && ultimoClick.TryGetComponent(out IInteratcuable interatcuable)) 
         {
             agent.stoppingDistance = distanciaInteraccion;
             if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             {
-                LanzarInteraccion(npc);
+                LanzarInteraccion(interatcuable);
                 
             }
         }
@@ -53,9 +54,9 @@ public class Player : MonoBehaviour
         
     }
 
-    private void LanzarInteraccion(NPC npc)
+    private void LanzarInteraccion(IInteratcuable interatcuable)
     {
-        npc.Interactuar(this.transform);
+        interatcuable.Interactuar(transform);
          ultimoClick = null;
     }
 
@@ -70,5 +71,10 @@ public class Player : MonoBehaviour
                 ultimoClick = hit.transform;
             }
         }
+    }
+
+    public void HacerDanho(float danhoAtaque)
+    {
+       Debug.Log("Me hacen pupa: " + danhoAtaque);
     }
 }

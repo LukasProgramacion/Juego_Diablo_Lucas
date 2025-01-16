@@ -10,6 +10,7 @@ public class SistemaCombate : MonoBehaviour
 
     [SerializeField] float velocidadCombate;
     [SerializeField] float distanciaAtaque;
+    [SerializeField] private float danhoAtaque;
 
     [SerializeField] private NavMeshAgent agent;
 
@@ -41,7 +42,7 @@ public class SistemaCombate : MonoBehaviour
             EnfocarObjetivo();
             agent.SetDestination(main.MainTarget.position);
 
-            if (agent.remainingDistance <= distanciaAtaque)
+            if (!agent.pathPending && agent.remainingDistance <= distanciaAtaque)
             {
                 anim.SetBool("attacking", true);
             }
@@ -52,6 +53,19 @@ public class SistemaCombate : MonoBehaviour
             main.ActivarPatrulla();
         }
     }
+
+    #region Ejectuados por eventos de animación
+    private void Atacar()
+    {
+        main.MainTarget.GetComponent<Player>().HacerDanho(danhoAtaque);
+    }
+    
+    private void FinAnimacionAtaque()
+    {
+        anim.SetBool("attacking", false);
+    }
+    #endregion
+    
 
     private void EnfocarObjetivo()
     {
