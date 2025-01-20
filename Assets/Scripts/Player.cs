@@ -9,6 +9,7 @@ using UnityEngine.AI;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float distanciaInteraccion;
+    [SerializeField] private float distanciaAtaque;
     [SerializeField] private float tiempoRotacion;
 
 
@@ -17,6 +18,11 @@ public class Player : MonoBehaviour
     private NavMeshAgent agent;
 
     private Transform ultimoClick;
+
+    [SerializeField] private Animator anim;
+    private PlayerAnimations playerAnimations;
+
+    public PlayerAnimations PlayerAnimations { get => playerAnimations; set => playerAnimations = value; }
 
 
 
@@ -46,6 +52,11 @@ public class Player : MonoBehaviour
                 
             }
         }
+        else if (ultimoClick && ultimoClick.TryGetComponent(out Enemigo enemigo))
+        {
+
+        }
+
         else if (ultimoClick)
         {
             agent.stoppingDistance = 0f;
