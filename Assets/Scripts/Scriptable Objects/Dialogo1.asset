@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Dialogo1
   m_EditorClassIdentifier: 
   frases:
-  - "Hi, there! fieston en mi kelly en noche viejaaaaa, vente brouston.\n9,98\u20AC
-    (no es una estafa)"
+  - Hola pringao q me consgas 3 setas anda venga crack
   - how long have you had this house? yes that is true
   - el sudor y el sufrimiento de unos es el goce y la alegria de otros
   tiempoEntreLetras: 0.02
+  tieneMision: 1
+  textoMision: Consigue Setas de la muerte (0/3)
