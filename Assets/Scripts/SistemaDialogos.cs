@@ -103,7 +103,7 @@ public class SistemaDialogos : MonoBehaviour
 
         if(dialogoActual.tieneMision)
         {
-            eventManager.NuevaMision();
+            eventManager.NuevaMision(dialogoActual.mision);
         }
     }
 }

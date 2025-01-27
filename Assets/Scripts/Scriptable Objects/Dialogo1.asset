@@ -18,4 +18,4 @@ MonoBehaviour:
   - el sudor y el sufrimiento de unos es el goce y la alegria de otros
   tiempoEntreLetras: 0.02
   tieneMision: 1
-  textoMision: Consigue Setas de la muerte (0/3)
+  mision: {fileID: 11400000, guid: 543adf57265b9f146bc458d7bc5f2a9e, type: 2}
