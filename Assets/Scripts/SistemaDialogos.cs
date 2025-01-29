@@ -98,12 +98,13 @@ public class SistemaDialogos : MonoBehaviour
         StopAllCoroutines();
         indiceFraseActual = 0;
         escribiendo = false;
-        dialogoActual = null;
         Time.timeScale = 1;
 
         if(dialogoActual.tieneMision)
         {
             eventManager.NuevaMision(dialogoActual.mision);
         }
+
+        dialogoActual = null;
     }
 }

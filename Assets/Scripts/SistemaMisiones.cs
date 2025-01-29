@@ -32,11 +32,13 @@ public class SistemaMisiones : MonoBehaviour
     }
     private void ActualizarToggle(MisionSO mision)
     {
-        
+        toggleMision[mision.indiceMision].TextoMision.text = mision.ordenInicial;
+        toggleMision[mision.indiceMision].TextoMision.text += "(" + mision.estadoActual + "/" + mision.repeticionesTotales + ")";
     }
     private void CerrarToggle(MisionSO mision)
     {
         toggleMision[mision.indiceMision].Toggle.isOn = true;
+        toggleMision[mision.indiceMision].TextoMision.text = mision.ordenFinal;
     }
 
 }

@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b827aa5fc723a34e9254d26c422acd1, type: 3}
-  m_Name: Mision 0
+  m_Script: {fileID: 11500000, guid: 61fe387f5691d9f4086a8e66b93278bf, type: 3}
+  m_Name: Dialogo2
   m_EditorClassIdentifier: 
-  ordenInicial: 'Recoge 3 setas '
-  ordenFinal: Dale las setas a Josefina
-  repetible: 1
-  repeticionesTotales: 3
-  indiceMision: 0
+  frases:
+  - Dioos tienes mis setas
+  - Yey
+  tiempoEntreLetras: 0.001
+  tieneMision: 1
+  mision: {fileID: 11400000, guid: 543adf57265b9f146bc458d7bc5f2a9e, type: 2}
