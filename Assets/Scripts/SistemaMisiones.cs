@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SistemaMisiones : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class SistemaMisiones : MonoBehaviour
     {
         toggleMision[mision.indiceMision].Toggle.isOn = true;
         toggleMision[mision.indiceMision].TextoMision.text = mision.ordenFinal;
+        
     }
 
 }

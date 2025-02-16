@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour, IInteratcuable
 {
@@ -44,7 +45,9 @@ public class NPC : MonoBehaviour, IInteratcuable
         if(misionTerminada == misionAsociada)
         {
             dialogoActual = dialogo2;
+            
         }
+        
     }
 
     public void Interactuar (Transform interactuador)

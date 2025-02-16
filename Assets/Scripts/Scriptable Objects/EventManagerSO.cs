@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 
 [CreateAssetMenu(menuName = "Event manager")]
@@ -25,5 +27,12 @@ public class EventManagerSO : ScriptableObject
     public void TerminarMision (MisionSO mision)
     {
         OnTerminarMision?.Invoke(mision);
+        FinalDelJuego();
     }
+
+    /*public void FinalDelJuego()
+    {
+        SceneManager.LoadScene(2);
+    }
+    */
 }

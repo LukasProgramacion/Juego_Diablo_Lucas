@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mision 0
   m_EditorClassIdentifier: 
   ordenInicial: 'Recoge 3 setas '
-  ordenFinal: Dale las setas a Josefina
+  ordenFinal: Devuelve las setas  a Justino
   repetible: 1
   repeticionesTotales: 3
   indiceMision: 0

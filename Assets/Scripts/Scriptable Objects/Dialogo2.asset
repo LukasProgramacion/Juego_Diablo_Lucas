@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Dialogo2
   m_EditorClassIdentifier: 
   frases:
-  - Dioos tienes mis setas
-  - Yey
+  - Gracias aventurero, veremos que se puede hacer con esto, deseame suerte!
+  - Pase lo que pase, fue un placer conocerte.
   tiempoEntreLetras: 0.001
   tieneMision: 1
   mision: {fileID: 11400000, guid: 543adf57265b9f146bc458d7bc5f2a9e, type: 2}

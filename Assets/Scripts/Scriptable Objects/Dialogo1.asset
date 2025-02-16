@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Dialogo1
   m_EditorClassIdentifier: 
   frases:
-  - Hola pringao q me consgas 3 setas anda venga crack
-  - how long have you had this house? yes that is true
-  - el sudor y el sufrimiento de unos es el goce y la alegria de otros
+  - "\xA1\xA1\xBF\xBFComo has llegado aqui aventurero??!! Para salir de aqu\xED deberas
+    encontrar 3 setas ocultas que hay repartidas por la mazmorra."
+  - "Con estos ingreientes podr\xE9 hacer una sopa que puede que relaje los \xE1nimos
+    de la reina y te deje salir"
+  - "A\xFAn as\xED, ten  cuidado, este lugar  es muy peligroso."
   tiempoEntreLetras: 0.02
   tieneMision: 1
   mision: {fileID: 11400000, guid: 543adf57265b9f146bc458d7bc5f2a9e, type: 2}
